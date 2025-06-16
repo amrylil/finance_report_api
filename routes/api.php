@@ -12,6 +12,13 @@ Route::post('/register', [AuthController::class, 'register']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
+Route::get('/', function () {
+  return response()->json([
+    'status'  => 'sukses',
+    'message' => 'Koneksi ke aplikasi Laravel berhasil! Database tidak dites.'
+  ]);
+});
+
 // ===================================================================
 // RUTE TERPROTEKSI (Wajib Login & Mengirimkan Token Sanctum)
 // ===================================================================
